@@ -1,17 +1,15 @@
-name: Run Tests
+name: Run QA Automation
 
 on:
   repository_dispatch:
-    types: [run-tests]
+    types: [trigger-ci]
 
 jobs:
-  run:
+  runAutomation:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-        
+      - name: Check out Repository
+        uses: actions/checkout@v3
+
       - name: Run Automation Tests
-        run: |
-          # Your commands to run tests
-          echo "Running automation tests..."
+        run: ./run-tests.sh  # or the command to start your automation framework
