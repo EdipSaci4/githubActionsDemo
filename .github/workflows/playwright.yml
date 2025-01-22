@@ -12,4 +12,4 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Automation Tests
-        run: ./run-tests.sh  # or the command to start your automation framework
+        run: npx playwright test  # or the command to start your automation framework
